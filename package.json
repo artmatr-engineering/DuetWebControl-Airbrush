@@ -8,8 +8,7 @@
    "scripts": {
       "dev": "vue-cli-service serve",
       "serve": "vue-cli-service serve",
-      "build": "vue-cli-service build",
-      "build-plugin": "node scripts/build-plugin.js",
+      "build": "vue-cli-service build",        "build-copy-object-model": "node ../ObjectModel-Airbrush/node_modules/@duet3d/objectmodel",      "build-plugin": "node scripts/build-plugin.js",
       "build-plugin-pkg": "node scripts/build-plugin-pkg.js",
       "report": "vue-cli-service build --report"
    },
@@ -17,7 +16,6 @@
       "@duet3d/connectors": "~3.6.0",
       "@duet3d/monacotokens": "~3.6.1",
       "@duet3d/motionanalysis": "~3.4.0",
-      "@duet3d/objectmodel": "~3.6.0",
       "@mdi/font": "^7.4.47",
       "@sindarius/gcodeviewer": "^3.7.13",
       "@vue/language-server": "~3.0.0",

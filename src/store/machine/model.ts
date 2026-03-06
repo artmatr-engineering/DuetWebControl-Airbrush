@@ -206,7 +206,9 @@ export default function (connector: BaseConnector | null): MachineModel {
 					} else if (key === "sbc" && state.sbc === null) {
 						Vue.set(state, "sbc", data.sbc);
 					} else {
-						patch((state as any)[key], (typedState as any)[key]);
+						// Don't skip non-existent fields when patching boards to allow new firmware properties (like rawAngle)
+						const skipNonexistent = key !== "boards";
+						patch((state as any)[key], (typedState as any)[key], skipNonexistent);
 					}
 				}
 			}

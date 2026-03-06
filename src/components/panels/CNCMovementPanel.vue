@@ -32,7 +32,7 @@
 					<v-menu offset-y left :disabled="uiFrozen">
 						<template #activator="{ on }">
 							<v-btn v-show="visibleAxes.length" color="primary" block class="mx-0 move-btn"
-								   :disabled="uiFrozen" v-on="on">
+							   disabled v-on="on">
 								{{ $t("panel.movement.compensation") }}
 								<v-icon>mdi-menu-down</v-icon>
 							</v-btn>
@@ -82,7 +82,7 @@
 					</v-menu>
 				</v-col>
 				<v-col cols="12" order="3" md="2" order-md="3">
-					<v-btn @click="setWorkplaceZero" block class="move-btn">
+				<v-btn @click="setWorkplaceZero" block class="move-btn" disabled>
 						{{ $t("panel.movement.setWorkXYZ") }}
 					</v-btn>
 				</v-col>
@@ -135,7 +135,7 @@
 					<v-row dense>
 						<v-col>
 							<code-btn color="warning" tile block :code="`G10 L20 P${currentWorkplace} ${axis.letter}0`"
-									  class="move-btn">
+								  :disabled="axis.letter !== 'Z'" class="move-btn">
 								{{ $t("panel.movement.set", [axis.letter]) }}
 							</code-btn>
 						</v-col>
