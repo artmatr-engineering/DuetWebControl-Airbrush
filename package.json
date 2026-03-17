@@ -13,7 +13,7 @@
       "report": "vue-cli-service build --report"
    },
    "dependencies": {
-      "@duet3d/connectors": "~3.6.0",
+      "@duet3d/connectors": "github:artmatr-engineering/Connectors-Airbrush#v3.6-dev",
       "@duet3d/monacotokens": "~3.6.1",
       "@duet3d/motionanalysis": "~3.4.0",
       "@mdi/font": "^7.4.47",
