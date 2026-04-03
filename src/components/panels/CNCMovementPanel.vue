@@ -134,10 +134,9 @@
 				<v-col cols="2" order="2" offset="8" sm="4" offset-sm="4" md="1" order-md="4" offset-md="0">
 					<v-row dense>
 						<v-col>
-							<code-btn color="warning" tile block :code="`G10 L20 P${currentWorkplace} ${axis.letter}0`"
-									  class="move-btn">
+							<v-btn color="warning" tile block class="move-btn" :disabled="isSetAxisDisabled(axis.letter)" @click="setAxisWorkZero(axis.letter)">
 								{{ $t("panel.movement.set", [axis.letter]) }}
-							</code-btn>
+							</v-btn>
 						</v-col>
 					</v-row>
 				</v-col>
@@ -230,6 +229,12 @@ export default Vue.extend({
 		},
 		async sendCode(code: string) {
 			await store.dispatch("machine/sendCode", code);
+		},
+		async setAxisWorkZero(axis: AxisLetter) {
+			await store.dispatch("machine/sendCode", `G10 L20 P${this.currentWorkplace} ${axis}0`);
+		},
+		isSetAxisDisabled(axis: AxisLetter) {
+			return axis.toUpperCase() === "U";
 		},
 		async setWorkplaceZero() {
 			let code = `G10 L20 P${this.currentWorkplace}`;
