@@ -625,6 +625,9 @@
       "caption": "Z Babystepping",
       "current": "Current Offset: {0}"
     },
+    "uBabystepping": {
+      "caption": "U Babystepping"
+    },
     "extrude": {
       "caption": "Extrusion Control",
       "mix": "Mix",
